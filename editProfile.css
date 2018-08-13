@@ -1,0 +1,37 @@
+#editProfileQs {
+  width: 1000px;
+  background-color: black;
+  color: white;
+  padding: 25px;
+  opacity: 0.7;
+  margin: 0 auto;
+  text-align: center;
+  font-family: 'Noto Sans', sans-serif;
+
+
+}
+body {
+  background-image: url("architecture-buildings-business-325185.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+ #buttonsEProfile {
+  width: 500px;
+  text-align: center;
+  margin: 0 auto;
+/*  border: 5px solid gold; */
+
+
+}
+
+.editProfButt {
+  border-radius: 5px;
+  background-color: #e7c719;
+  height: 105px;
+  width: 105px;
+  color: white;
+  border: 1px solid #e7c719;
+  box-shadow: 5px 10px #888888;
+
+}

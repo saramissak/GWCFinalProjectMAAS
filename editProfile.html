@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Edit Profile </title>
+  <link rel="stylesheet" type="text/css" href="editProfile.css">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+  <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDEsWRHBFCz0dhVRg5cekLTHKI5ertDSAE",
+      authDomain: "gwc-project-7d5ab.firebaseapp.com",
+      databaseURL: "https://gwc-project-7d5ab.firebaseio.com",
+      projectId: "gwc-project-7d5ab",
+      storageBucket: "gwc-project-7d5ab.appspot.com",
+      messagingSenderId: "250632410891"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-database.js"></script>
+  <script>     var config = {
+        // ...
+        };
+        firebase.initializeApp(config);
+</script>
+<style>
+
+
+</style>
+</head>
+<body>
+  <div id="editProfileQs">
+    <p> First name: </p>
+    <input type="text" name="firstName">
+    <br>
+    <p> Last name: </p>
+    <input type="text" name="lastName">
+    <br>
+    <p> Age: </p>
+    <input type="text" name="age">
+    <br>
+    <p> Email: </p>
+    <input type="text" name="email">
+    <br>
+    <p> Gender: </p>
+    <input type="text" name="Gender">
+    <br>
+    <p> Racial Identity (Click all that apply): </p>
+    <input type="checkbox" name="LatinoOrHispanic"> Latino or Hispanic <br>
+    <input type="checkbox" name="Black"> Black or African American <br>
+    <input type="checkbox" name="Caucasian"> Caucasian <br>
+    <input type="checkbox" name="Asian"> Asian <br>
+    <input type="checkbox" name="AmericanIndianOrAlaskaNative"> American Indian or Alaska Native <br>
+    <input type="checkbox" name="NHOOPC">  Native Hawaiian or Other Pacific Islander <br>
+    <input type="checkbox" name="WestIndian"> West Indian <br>
+    <input type="checkbox" name="Other"> Other <br>
+
+    <p>Target Job:</p>
+    <input type="checkbox" name="Engineer"> Engineer<br>
+    <input type="checkbox" name="Medicine"> Medicine<br>
+    <input type="checkbox" name="Business"> Business<br>
+    <input type="checkbox" name="Arts"> Arts <br>
+    <input type="checkbox" name="Office Worker"> Office Worker <br>
+    <input type="checkbox" name="Other"> Other <input type="text" name="OtherText"> <br>
+  </div>
+
+
+
+
+
+  <div id="buttonsEProfile">
+    <button type= "button" class="editProfButt">UPLOAD RESUME</button>   <button type= "button" class="editProfButt">UPLOAD PROFILE</button>
+  </div>
+
+
+
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
