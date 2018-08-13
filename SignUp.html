@@ -1,0 +1,72 @@
+<!DOCTYPE html><!-- Sign Up Page-->
+<html>
+<head>
+<title>Welcome! Sign Up!</title>
+<style>
+h1{
+  text-align: center;
+  font-size: 42px;
+}
+form{
+  text-align: center;
+  font-size: 30px;
+  color: black;
+}
+input[type=text], input[type=password]{
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid black;
+    background-color: #e7c719;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+
+}
+input[type=text]:focus {
+    border: 3px solid #555;
+}
+input[type=submit]{
+  padding: 10px;
+  color: black;
+  background-color: #e7c719;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+}
+body{
+  background-image: url("https://images.pexels.com/photos/1036808/pexels-photo-1036808.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  -webkit-background-size: 100%;
+ -moz-background-size: 100%;
+ -o-background-size: 100%;
+ background-size: 100%;
+}
+</style>
+</head>
+<body>
+  <h1>Welcome! Sign-Up for a new account!</h1>
+  <form>
+  First Name: <br>
+  <input type="text" name="firstname">
+  <br>
+  Last Name: <br>
+  <input type="text" name="lastname">
+  <br>
+  Username:<br>
+  <input type="text" name="username">
+  <br>
+  Email: <br>
+  <input type="text" name="email">
+  <br>
+  Password:
+  <br>
+  <input type="password" name="password">
+  <br>
+  <br>
+  <input type="submit" value="Submit">
+  </form>
+</body>
+</html>
