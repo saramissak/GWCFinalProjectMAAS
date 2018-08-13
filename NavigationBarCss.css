@@ -1,24 +1,50 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Lobster', cursive;
+}
+
 li a.active {
-    background-color: #4CAF50;
+    background-color: black;
     color: white;
 }
 
 li a:hover:not(.active) {
-    background-color: #555;
-    color: white;
+    background-color: white;
+    color: #e7c719;
 }
 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    width: 200px;
-    background-color: #f1f1f1;
-    float: none;
+    overflow: hidden;
+    background-color: #333;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
+li {
+    float: left;
+    width: 20%;
+    vertical-align: middle;
+    font-size: 30px;
 }
 
 li a {
     display: block;
-    color: #000;
-    padding: 8px 16px;
+    color: white;
+    text-align: center;
+    vertical-align: center;
+    padding: 14px 16px;
     text-decoration: none;
+}
+
+li a:hover {
+    background-color: white;
+}
+h3 {
+  color: #e7c719;
+  text-align: center;
+  margin-top: 10px;
 }
