@@ -13,9 +13,8 @@
     text-align: center;
     font-size: 42px;
   }
-  form{
+  body{
     text-align: center;
-    font-size: 30px;
     color: black;
   }
   input[type=text], input[type=password]{
@@ -57,7 +56,7 @@
   <body>
 
     <h1>Welcome! Sign-Up for a new account!</h1>
-    <form>
+
     First Name: <br>
     <input type="text" name="firstname">
     <br>
@@ -74,9 +73,9 @@
 		<input style="display:inline;width:auto;" type="password" id="password_confirmation" name="password" placeholder="Type Your Password Again"/>
 
 		<br/><br/>
-
+    <div class="sign">
 		<button id="sign-up"  name="signup" onclick="handleSignUp()">Sign Up</button>
-
+  </div>
 	</div>
 </body>
 </html>
