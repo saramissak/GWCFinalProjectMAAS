@@ -1,0 +1,36 @@
+.test{
+  color:white;
+  font-family: "Courier New";
+}
+
+h1{
+  color:Black;
+  text-shadow: 3px 2px burlwood;
+  font-size:50px;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+  padding-top: 20%;
+  padding-bottom:3%;
+  width: 10%;
+}
+
+
+.head{
+  color: black;
+  font-family: "Courier New";
+  text-align: center;
+}
+
+  body{
+    color: black;
+   background: url(https://data.whicdn.com/images/265588773/large.jpg);
+  -webkit-background-size: 100%;
+  -moz-background-size: 100% ;
+  -o-background-size: 100% ;
+  background-size: 100% ;
+  }
+p {
+  font-size: 30px;
+  text-align: center;
+}
