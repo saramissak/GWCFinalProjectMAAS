@@ -36,13 +36,15 @@ function authStatusListener() {
 	firebase.auth().onAuthStateChanged(function(user) {
 		if (user) {
 			document.getElementById('log-in-form').innerHTML='';
-			document.getElementById('message-box').innerHTML = "You're signed in!";
+			document.getElementById('message-box').innerHTML = "You're signed in! <button onclick='feed()''>Click me to go to the feed!</button>";
 		} else {
 			// No user is signed in.
 		}
 	});
 }
-
+function feed() {
+	location.href = "feed.html";
+}
 // the function that gets called when the page first loads
 function init() {
 	authStatusListener();

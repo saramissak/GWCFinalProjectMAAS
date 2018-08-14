@@ -26,12 +26,14 @@ function authStatusListener() {
 		if (user) {
 			// A user is signed in
 		} else {
-			document.getElementById('message-box').innerHTML = "You're logged out.";
+			document.getElementById('message-box').innerHTML = "You're logged out. <button onclick='home()''>Click me to go to the Home Screen!</button>";
 			document.getElementById('log-out-form').innerHTML = '';
 		}
 	});
 }
-
+function home() {
+	location.href = "index.html";
+}
 // the function that gets called when the page first loads
 function init() {
 	authStatusListener();

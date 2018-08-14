@@ -48,10 +48,11 @@ function authStatusListener() {
 			var message = "Sign up successful!";
 			document.getElementById('message-box').innerHTML = message;
 			location.href = "signup3successful.html";
-
 		} else {
 		}
 	});
 }
-
+function feed() {
+	location.href = "feed.html";
+}
 window.onload = function() { authStatusListener(); };
