@@ -1,5 +1,15 @@
+<!DOCTYPE html>
 <html>
 <head>
+  <title> Log In Page </title>
+  <link rel= "stylesheet" type="text/css" href="login.css">
+
+<style>
+
+
+
+
+</style>
 
   <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-auth.js"></script>
@@ -7,10 +17,12 @@
 
 
   <script src="login.js"></script>
-</head>
 
+
+</head>
 <body>
-	<p>Enter your email and password to log in!</p>
+  <div id="logins">
+  <p>Enter your email and password to log in!</p>
 	<div id="message-box"> </div>
 	<div id="log-in-form">
 		<input style="display:inline;width:auto;" type="text" id="email" name="email" placeholder="Email"/>
@@ -22,5 +34,14 @@
 		<button id="log-in" name="login" onclick="handleLogIn()">Log In</button>
 
 	</div>
+</div>
 </body>
+
+
+
+
+
+
+
+
 </html>
