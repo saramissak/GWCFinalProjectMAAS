@@ -23,14 +23,14 @@ h1{
 }
 
   body{
-    color: black;
+  color: black;
    background: url(https://data.whicdn.com/images/265588773/large.jpg);
   -webkit-background-size: 100%;
   -moz-background-size: 100% ;
   -o-background-size: 100% ;
   background-size: 100% ;
   }
-p {
-  font-size: 30px;
-  text-align: center;
-}
+  p {
+    font-size: 30px;
+    text-align: center;
+  }

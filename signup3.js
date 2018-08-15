@@ -52,7 +52,14 @@ function authStatusListener() {
 		}
 	});
 }
+
+function nav(){
+	if(document.URL.includes("signup3successful.html")){
+		document.getElementById('nav-bar').innerHTML = '<ul> <li><a href="#search">Search</a></li><li><a href="feed.html">Feed</a></li><li><h3><a href="index.html">Company Name</a></h3></li><li><a href="profile.html">Profile</a></li><li><a href="logout.html">Log Out</a></li></ul>';
+	}
+}
+
 function feed() {
 	location.href = "feed.html";
 }
-window.onload = function() { authStatusListener(); };
+window.onload = function() { authStatusListener(); nav(); };
