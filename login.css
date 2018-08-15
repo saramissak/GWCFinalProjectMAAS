@@ -1,0 +1,25 @@
+#log-in{
+  width: 1000px;
+  background-color: black;
+  color: white;
+  padding: 25px;
+  opacity: 0.7;
+  margin: 0 auto;
+  text-align: center;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+#logins {
+  width: 1000px;
+  padding: 25px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+
+body {
+  background-image: url("https://images.pexels.com/photos/917494/pexels-photo-917494.jpeg?auto=compress&cs=tinysrgb&h=650&w=940");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
