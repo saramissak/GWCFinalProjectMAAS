@@ -1,21 +1,58 @@
 <html>
 <head>
-
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
   <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-database.js"></script>
-
-
   <script src="logout.js"></script>
+  <link rel="stylesheet" href="NavigationBarCss.css">
+  <style>
+  #message-box{
+    font-size: 30px;
+  }
+  .wrap {
+    text-align:center;
+    padding-top: 1%;
+  }
+  button {
+    background-color: black;
+    color: white;
+  }
+  .width{
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+  }
+  .width50 {
+    margin-left: 2%;
+    padding-left: 2%;
+    width: 48%;
+    text-align: center;
+    font-size: 30px;
+  }
+  #invisible{
+    width: 100%;
+    text-align: center;
+  }
+  body{
+    background-image: url('https://images.pexels.com/photos/796602/pexels-photo-796602.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+    -webkit-background-size: 100%;
+    -moz-background-size: 100% ;
+    -o-background-size: 100% ;
+    background-size: 100% ;
+  }
+  </style>
 </head>
 
 <body>
-	<p>Sample Log Out Button</p>
-	<div id="message-box"> </div>
-	<div id="log-out-form">
+<div id='nav-bar'></div>
+<div id="invisible">
+  <h1 class="wrap" style="font-size: 50px" >Are you sure you want to log out?</h1>
+  <button id="log-out" class="width50" name="logout" onclick="handleLogOut()">Yes.</button>
+  <button class="width50" onclick=location.href='feed.html'>No.</button>
+</div>
 
-	<button id="log-out" name="logout" onclick="handleLogOut()">Log Out</button>
-  
-	</div>
+	<div id="message-box"> </div>
+
 </body>
 </html>
