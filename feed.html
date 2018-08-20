@@ -18,7 +18,20 @@
 </head>
 <body>
 <div id='nav-bar'></div>
-<button onclick=new_post()>New Post</button>
-<div id='tweet'></div>
+<!--<button onclick=new_post()>New Post</button>-->
+<p>What is your favourite colour and movie?</p>
+	<div id="message-box"> Your favourite color is: <span id="colour"></span> <br>
+Your favourite movie is: <span id="movie"></span>
+</div>
+
+
+	<div id="pref-form">
+		<input style="display:inline;width:auto;" type="text" id="colour-box" name="colour" placeholder="Colour"/>
+		<input style="display:inline;width:auto;" type="text" id="movie-box" name="movie" placeholder="Movie"/>
+
+		<br/><br/>
+
+		<button id="submit" name="submit" onclick="changePrefs()">Submit</button>
+	</div>
 </body>
 </html>
