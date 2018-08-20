@@ -19,21 +19,22 @@ var database = firebase.database();
 function changePrefs(){
 	var user = firebase.auth().currentUser;
 	var post = document.getElementById('post-box').value;
+	var link = document.getElementById('link-box').value;
 
 	if (user) {
 		var posts = user.uid;
-		setPref(posts, post);
+		setPref(posts, post, link);
 	}
 }
 
 
-function setPref(posts, post){
+function setPref(posts, post, link){
 	var prefs = {
 		post: post,
+		link: link,
 	};
 
-	var ref = database.ref('/posts/' );
-
+	var ref = database.ref('/posts/');
 	// ref.set(prefs);
 
   // Get a key for a new Post.
@@ -56,15 +57,21 @@ function getPref(posts){
 		var my_pref = snapshot.val();
 
     for(var key in my_pref){
+			alert(my_pref[key]['link']);
       document.getElementById("feed").innerHTML += "<br>" + my_pref[key]['post'];
+			document.getElementById("feed").innerHTML += "<a href='" + my_pref[key]['link'] + "'> CLICK ME </a>" ;
     }
 
 		// get the values in the JSON
 		var post = my_pref.post;
+		var link = my_pref.link;
 
 		// if there are no values for this entry in the database, change the variables
 		if(!post) {
 			post = 'Nothing in database!';
+		}
+		if(!link) {
+			link = 'Nothing in database!';
 		}
 
 
