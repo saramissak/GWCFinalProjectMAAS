@@ -1,0 +1,48 @@
+<html>
+<head>
+
+  <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-database.js"></script>
+
+
+  <script src="editProfileTTEESSTT.js"></script>
+</head>
+
+<body>
+	<div id="message-box"> hi
+</div>
+
+
+	<div id="pref-form">
+
+		<br/><br/>
+
+    <p> Full Name: </p>  <span id="firstName"></span> <span id="lastName"></span> <br>
+    <input style="display:inline;width:auto;" type="text" id="firstName-box" name="firstName" placeholder="First Name"/>
+    <input style="display:inline;width:auto;" type="text" id="lastName-box" name="lastName" placeholder="Last Name"/>
+    <br>
+    <p> Age: </p>  <span id="age"></span> <br>
+    <input style="display:inline;width:auto;" type="text" id="age-box" name="age" placeholder="How old are you?"/>
+    <p> Gender: </p>  <span id="gender"></span> <br>
+    <input style="display:inline;width:auto;" type="text" id="gender-box" name="gender" placeholder="What gender do you identify with?"/>
+    <br>
+    <span> NOTE: If you do not wish to disclose, write "not disclosed" </span>
+    <br>
+
+    <p> Racial Identity (Click all that apply): </p>
+    <input type="checkbox" name="LatinoOrHispanic"> Latino or Hispanic <br>
+    <input type="checkbox" name="Black"> Black or African American <br>
+    <input type="checkbox" name="Caucasian"> Caucasian <br>
+    <input type="checkbox" name="Asian"> Asian <br>
+    <input type="checkbox" name="AmericanIndianOrAlaskaNative"> American Indian or Alaska Native <br>
+    <input type="checkbox" name="NHOOPC">  Native Hawaiian or Other Pacific Islander <br>
+    <input type="checkbox" name="WestIndian"> West Indian <br>
+    <input type="checkbox" name="Other"> Other <br>
+    <br>
+
+		<button id="submit" name="submit" onclick="changePrefs()">Save</button>
+
+	</div>
+</body>
+</html>
