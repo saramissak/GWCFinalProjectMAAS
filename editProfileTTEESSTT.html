@@ -31,15 +31,36 @@
     <br>
 
     <p> Racial Identity (Click all that apply): </p>
-    <input type="checkbox" name="LatinoOrHispanic"> Latino or Hispanic <br>
-    <input type="checkbox" name="Black"> Black or African American <br>
-    <input type="checkbox" name="Caucasian"> Caucasian <br>
-    <input type="checkbox" name="Asian"> Asian <br>
-    <input type="checkbox" name="AmericanIndianOrAlaskaNative"> American Indian or Alaska Native <br>
-    <input type="checkbox" name="NHOOPC">  Native Hawaiian or Other Pacific Islander <br>
-    <input type="checkbox" name="WestIndian"> West Indian <br>
-    <input type="checkbox" name="Other"> Other <br>
+    <input type="checkbox" name="LatinoOrHispanic" id="LatinoOrHispanic"> Latino or Hispanic <br>
+    <input type="checkbox" name="Black" id="Black"> Black or African American <br>
+    <input type="checkbox" name="Caucasian" id="Caucasian"> Caucasian <br>
+    <input type="checkbox" name="Asian" id="Asian"> Asian <br>
+    <input type="checkbox" name="AmericanIndianOrAlaskaNative" id="AmericanIndianOrAlaskaNative"> American Indian or Alaska Native <br>
+    <input type="checkbox" name="NHOOPC" id="NHOOPC">  Native Hawaiian or Other Pacific Islander <br>
+    <input type="checkbox" name="WestIndian" id="WestIndian"> West Indian <br>
+    <input type="checkbox" name="Other" id="Other"> Other <br>
     <br>
+
+    <p> Address: </p>  <span id="address"></span> <br>
+    <input style="display:inline;width:auto;" type="text" id="address-box" name="address" placeholder="State your address."/>
+    <br>
+    <p> Phone Number: </p>  <span id="phoneNumber"></span> <br>
+    <input style="display:inline;width:auto;" type="text" id="phoneNumber-box" name="phoneNumber" placeholder="Phone Number"/>
+    <br>
+    <p> Email: </p>  <span id="email"></span> <br>
+    <input style="display:inline;width:auto;" type="text" id="email-box" name="email" placeholder="Choose the email you want employers to contact you with."/>
+    <br>
+    <p> Objective: </p>  <span id="objective"></span> <br>
+    <input style="display:inline;width:auto;" type="text" id="objective-box" name="objective" placeholder="What is your resume objective?"/>
+    <br>
+    <!-- education would go here -->
+    <p> Skills: </p>  <span id="skills"></span> <br>
+    <input style="display:inline;width:auto;" type="text" id="skills-box" name="skills" placeholder="Skills"/>
+    <br>
+    <p> Accomplishments: </p>  <span id="accomplishments"></span> <br>
+    <input style="display:inline;width:auto;" type="text" id="accomplishments-box" name="accomplishments" placeholder="What are some accomplishments you want to state?"/>
+    <br>
+
 
 		<button id="submit" name="submit" onclick="changePrefs()">Save</button>
 
