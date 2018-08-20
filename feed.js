@@ -57,8 +57,8 @@ function getPref(posts){
 		var my_pref = snapshot.val();
 
     for(var key in my_pref){
-      document.getElementById("feed").innerHTML += "<br>" + my_pref[key]['post'];
-			document.getElementById("feed").innerHTML += "<a href='" + my_pref[key]['link'] + "'> CLICK ME </a>" ;
+      document.getElementById("feed").innerHTML += "<br>" + my_pref[key]['post'] + "<br>";
+			document.getElementById("feed").innerHTML += "<a href='" + my_pref[key]['link'] + "'> CLICK ME </a><hr>" ;
     }
 
 		// get the values in the JSON
