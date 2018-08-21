@@ -16,12 +16,28 @@ var database = firebase.database();
 function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
+/*function profile_search(){
+  var input = document.getElementById('search').value.toLowerCase();
+  var profiles = database.profiles('/user_prefs/'+uid);
 
+  return profiles.once('value').then(function(snapshot){
+    var my_prefs = snapshot.val();
+    if(!my_prefs){
+      return;
+    }
+  });
+  for(var key in my_prefs){
+    if(all_posts[key]['/user_prefs' + uid].toLowerCase().indexOf(input) >= 0){
+      document.getElementById("posted").innerHTML += "<br>" + my_prefs[key]['/user_prefs' + uid] + "<br>";
+      }
+}*/
 function search(){
+  document.getElementById('posted').innerHTML = '';
   var input = document.getElementById('search').value.toLowerCase();
   var ref = database.ref('/posts/');
 
   // gets the data
+
   return ref.once('value').then(function(snapshot){
     // when it's successful, get the value JSON
     var all_posts = snapshot.val();
@@ -56,4 +72,4 @@ firebase.auth().onAuthStateChanged(function(user) {
   }
 });
 }
-window.onload = function() {authStatusListener();}
+window.onload = function() { authStatusListener(); };
