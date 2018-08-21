@@ -26,9 +26,30 @@ function changePrefs(){
   var objective = document.getElementById('objective-box').value;
   var skills = document.getElementById('skills-box').value;
   var accomplishments = document.getElementById('accomplishments-box').value;
+  var raceList = document.getElementsByClassName('race');
+   // makes a list of all the elements with the class "race" (regarldess of if its checked)
+  var count = 0;
+  var checkedRaces = [];
+  while (count < raceList.length) {
+    if (raceList[count].checked) { // if the checkbox was checked, add to checked list
+      checkedRaces.push(raceList[count]);
+    }
+    count++;
+  }
+  var i;
+  for (i = 0; i < raceList.length; i++) {
+    alert("all the races: " + raceList[i].id);
+  }
+  var racesText = "";
+  var q;
+  for (q = 0; q < checkedRaces.length; q++) {
+    alert("checked races: " + checkedRaces[q].id);
+    racesText = racesText + str(checkedRaces[q]) + "/";
+    alert(racesText);
+  }
 
-  // Racial Identity checklist
-  print(document.getElementById("LatinoOrHispanic").value);
+
+
 	if (user) {
 		var uid = user.uid;
 
