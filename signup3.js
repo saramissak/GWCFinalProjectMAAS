@@ -11,7 +11,6 @@ var config = {
 // Initialize Firebase
 firebase.initializeApp(config);
 
-
 // handleSignUp occurs after the "sign up" button is pressed. It creates a new user in our user database with values provided.
 // the Firebase API takes care of all the value checking for us! All we need to do is provide how to show the user the error.
 // In our example, we use an alert box, but you can also use change the innerHTML of some div to show a message. :)
@@ -55,7 +54,7 @@ function authStatusListener() {
 
 function nav(){
 	if(document.URL.includes("signup3successful.html")){
-		document.getElementById('nav-bar').innerHTML = '<ul> <li><a href="#search">Search</a></li><li><a href="feed.html">Feed</a></li><li><h3><a href="index.html">Company Name</a></h3></li><li><a href="profile.html">Profile</a></li><li><a href="logout.html">Log Out</a></li></ul>';
+		document.getElementById('nav-bar').innerHTML = '<ul> <li><a href="search.html">Search</a></li><li><a href="feed.html">Feed</a></li><li><h3><a href="index.html">Company Name</a></h3></li><li><a href="profile.html">Profile</a></li><li><a href="logout.html">Log Out</a></li></ul>';
 	}
 }
 
