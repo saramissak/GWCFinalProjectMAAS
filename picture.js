@@ -14,12 +14,12 @@ const storage = firebase.storage()
 const submitButton = document.getElementById('submitButton');
 submitButton.addEventListener('change', (e)=>{
   let file = e.target.files[0];
-  let locationRef = storage.ref('cats/' + file.name)
+  let locationRef = storage.ref('profile_picture/' + file.name)
   locationRef.put(file)
 })
 submitButton.addEventListener('change', (e)=>{
   let file = e.target.files[0];
-  let locationRef = storage.ref('cats/' + file.name)
+  let locationRef = storage.ref('profile_picture/' + file.name)
   let task = locationRef.put(file)
   task.on('state_changed',
       function progress(snapshot){
@@ -44,3 +44,44 @@ submitButton.addEventListener('change', (e)=>{
     }
   )
   let uploader = document.getElementById('progressBar')
+	let storageRef = storage.ref('profile_picture')
+	let image = storageRef.child('profile_picture');
+	let storageRef = storage.ref('profile_picture/Profile.png');
+	image.getMetadata().then(function(metadata) {
+		document.getElementryByID('img').src = metadata.downloadURLS[0]
+	}).catch(function(error) { /*error handling*/});
+	let storageRef = storage.ref('profile_picture/profile_picture.png');
+	storageRef.delete().then(function() {
+		// removed
+	}).catch(function(error) {
+		// not removed :(
+	});
+	submitButton.addEventListener('change', (e)=>{
+		let file = e.target.file[0];
+		let locationRef = torage.ref('profile_picture'/ + file.name)
+		let task = locationRef.put(file)
+		task.on('state_changed'
+			...
+			function complete(){
+				// on completion
+			}
+
+		)
+	})
+	const database = firebase.database()
+	const ref = database.ref('profile_picture');
+	submitButton.addEventListener('change', (e)=>{
+		...
+		task.on('state_changed',
+			...
+			function complete(){
+				storageRef.getMetadata().them(metadata=>{
+					ref.push({
+						url: metadata.downloadURLS[0]
+					})
+					})
+				}
+		)
+	})
+
+		
