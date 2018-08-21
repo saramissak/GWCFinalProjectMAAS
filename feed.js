@@ -58,7 +58,7 @@ function getPref(posts){
 
     for(var key in my_pref){
       document.getElementById("feed").innerHTML += "<br>" + my_pref[key]['post'] + "<br>";
-			document.getElementById("feed").innerHTML += "<a href='" + my_pref[key]['link'] + "'> CLICK ME </a><hr>" ;
+			document.getElementById("feed").innerHTML += "<a href='" + my_pref[key]['link'] + "' target='_blank'> CLICK ME </a><hr>" ;
     }
 
 		// get the values in the JSON
