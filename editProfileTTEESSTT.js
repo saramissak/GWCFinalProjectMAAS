@@ -26,26 +26,31 @@ function changePrefs(){
   var objective = document.getElementById('objective-box').value;
   var skills = document.getElementById('skills-box').value;
   var accomplishments = document.getElementById('accomplishments-box').value;
+
   var raceList = document.getElementsByClassName('race');
    // makes a list of all the elements with the class "race" (regarldess of if its checked)
   var count = 0;
   var checkedRaces = [];
   while (count < raceList.length) {
     if (raceList[count].checked) { // if the checkbox was checked, add to checked list
-      checkedRaces.push(raceList[count]);
+      checkedRaces.push(raceList[count].id);
     }
     count++;
   }
-  var i;
-  for (i = 0; i < raceList.length; i++) {
-    alert("all the races: " + raceList[i].id);
-  }
+  var races = checkedRaces; //the data for races that will be put into the database
+
+  // displaying the checked races
   var racesText = "";
-  var q;
-  for (q = 0; q < checkedRaces.length; q++) {
-    alert("checked races: " + checkedRaces[q].id);
-    racesText = racesText + str(checkedRaces[q]) + "/";
-    alert(racesText);
+  if (checkedRaces.length == 1) { //if there's only one selected, set racesText as that
+    racesText = checkedRaces[0].id;
+  } else if (checkedRaces.length > 1) {
+      var q;
+      var racesText = checkedRaces[0];
+      for (q = 1; q < checkedRaces.length; q++) {
+        alert("checked races: " + checkedRaces[q]);
+        racesText = racesText + "/" + checkedRaces[q];
+        alert(racesText);
+      }
   }
 
 
@@ -101,6 +106,7 @@ function changePrefs(){
       alert(lastName);
       alert(age);
       alert(gender);
+      alert(races);
       alert(address);
       alert(phoneNumber);
       alert(email);
@@ -108,13 +114,14 @@ function changePrefs(){
       alert(skills);
       alert(accomplishments);
 
-      setPref(uid, firstName, lastName, age, gender, address, phoneNumber, email, objective, skills, accomplishments);
+
+      setPref(uid, firstName, lastName, age, gender, races, address, phoneNumber, email, objective, skills, accomplishments);
 	  });
 
   }
 }
 
-function setPref(uid, firstName, lastName, age, gender, address, phoneNumber, email, objective, skills, accomplishments){
+function setPref(uid, firstName, lastName, age, gender, races, address, phoneNumber, email, objective, skills, accomplishments){
 	var prefs = {
 		firstName: firstName,
 		lastName: lastName,
@@ -126,6 +133,7 @@ function setPref(uid, firstName, lastName, age, gender, address, phoneNumber, em
     objective: objective,
     skills: skills,
     accomplishments: accomplishments,
+    races: races,
 	};
 
 	var ref = database.ref('/user_prefs/' + uid);
@@ -148,6 +156,7 @@ function getPref(uid){
 		var lastName = my_pref.lastName;
     var age = my_pref.age;
     var gender = my_pref.gender;
+    var races = my_pref.races;
     var address = my_pref.address;
     var phoneNumber = my_pref.phoneNumber;
     var email = my_pref.email;
@@ -160,17 +169,20 @@ function getPref(uid){
 		document.getElementById('lastName').innerHTML = my_pref.lastName;
     document.getElementById('age').innerHTML = my_pref.age;
     document.getElementById('gender').innerHTML = my_pref.gender;
+    document.getElementById('races').innerHTML = my_pref.races;
     document.getElementById('address').innerHTML = my_pref.address;
     document.getElementById('phoneNumber').innerHTML = my_pref.phoneNumber;
     document.getElementById('email').innerHTML = my_pref.email;
     document.getElementById('objective').innerHTML = my_pref.objective;
     document.getElementById('skills').innerHTML = my_pref.skills;
     document.getElementById('accomplishments').innerHTML = my_pref.accomplishments;
+
     // change the placeholder
     document.getElementById('firstName-box').placeholder = firstName;
     document.getElementById('lastName-box').placeholder = lastName;
     document.getElementById('age-box').placeholder = age;
     document.getElementById('gender-box').placeholder = gender;
+    // races checklist has no input to have a placeholder of to change
     document.getElementById('address-box').placeholder = address;
     document.getElementById('phoneNumber-box').placeholder = phoneNumber;
     document.getElementById('email-box').placeholder = email;
