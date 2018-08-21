@@ -4,19 +4,20 @@
 }
 
 h1.a {
-  color:Black;
+  color:Gold;
   text-shadow: 3px 2px burlwood;
-  font-size:50px;
+  font-size:90px;
   text-align: center;
   display: table-cell;
   vertical-align: middle;
   padding-top: 20%;
   padding-bottom:3%;
   width: 10%;
+  font-family: "Courier New";
 }
 
 h1.b {
-  color:Black;
+  color:Gray;
   text-shadow: 3px 2px burlwood;
   font-size:50px;
   text-align: center;
@@ -28,20 +29,24 @@ h1.b {
 }
 
 .head{
-  color: black;
+  color: Gray;
   font-family: "Courier New";
   text-align: center;
 }
 
   body{
-    color: black;
-    /*background: url("https://data.whicdn.com/images/265588773/large.jpg");
-  -webkit-background-size: 100%;
-  -moz-background-size: 100% ;
-  -o-background-size: 100% ;
-  background-size: 100% ;*/
+    color: Gray;
+    background: url("https://images.pexels.com/photos/1036808/pexels-photo-1036808.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
   }
   p {
     font-size: 30px;
     text-align: center;
   }
+
+#aboutus {
+  color: Gold;
+  font-family: "Courier New";
+  text-align: center;
+}
