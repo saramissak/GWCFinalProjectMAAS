@@ -15,12 +15,7 @@ var database = firebase.database();
 
 // if the user wants to edit the profile, they can click this button and the input boxes and buttons will reappear
 function editProfShow() {
-  var ghosts = document.getElementsByClassName("ghost");
-  var r = 0;
-  while ( r < ghosts.length) {
-    ghosts[r].style.visibility = "visible";
-    r++;
-  }
+  document.getElementsByClassName("ghost").style.visibility = "visible";
 }
 
 function saveProfDisappear() {
