@@ -26,7 +26,7 @@ function authStatusListener() {
 		if (user) {
 			// A user is signed in
 		} else {
-			document.getElementById('nav-bar').innerHTML = '<ul><li><a href="#search">Search</a></li><li><a href="index.html">Home </a></li><li><h3><a href="index.html">Company Name</a></h3></li><li><a href="login.html">Log In </a></li><li><a href="signup3.html">Sign Up </a></li></ul>';
+			document.getElementById('nav-bar').innerHTML = '<ul><li><a href="search.html">Search</a></li><li><a href="index.html">Home </a></li><li><h3><a href="index.html">Company Name</a></h3></li><li><a href="login.html">Log In </a></li><li><a href="signup3.html">Sign Up </a></li></ul>';
 			document.getElementById('message-box').innerHTML = '<h1><center>You\'re logged out.</h1><br><button onclick="home()" class="width">Click me to go to the Home Screen!</button></center>';
 			document.getElementById('invisible').style.visibility='hidden';
 		}
