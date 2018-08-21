@@ -43,6 +43,12 @@ h1.b {
   p {
     font-size: 30px;
     text-align: center;
+    margin-left: 250px;
+    background-color: white;
+    font-size: 25px;
+    text-align: center;
+    width: 1000px;
+    font-family: monospace;
   }
 
 #aboutus {

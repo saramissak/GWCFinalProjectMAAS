@@ -11,7 +11,6 @@ var config = {
 // Initialize Firebase
 firebase.initializeApp(config);
 
-
 // handleSignUp occurs after the "sign up" button is pressed. It creates a new user in our user database with values provided.
 // the Firebase API takes care of all the value checking for us! All we need to do is provide how to show the user the error.
 // In our example, we use an alert box, but you can also use change the innerHTML of some div to show a message. :)
