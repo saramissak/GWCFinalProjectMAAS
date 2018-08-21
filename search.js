@@ -16,9 +16,9 @@ var database = firebase.database();
 function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
-/*function profile_search(){
+function profile_search(){
   var input = document.getElementById('search').value.toLowerCase();
-  var profiles = database.profiles('/user_prefs/'+uid);
+  var profiles = database.profiles('/user_prefs/'+ uid);
 
   return profiles.once('value').then(function(snapshot){
     var my_prefs = snapshot.val();
@@ -27,12 +27,13 @@ function myFunction() {
     }
   });
   for(var key in my_prefs){
-    if(all_posts[key]['/user_prefs' + uid].toLowerCase().indexOf(input) >= 0){
-      document.getElementById("posted").innerHTML += "<br>" + my_prefs[key]['/user_prefs' + uid] + "<br>";
+    if(my_prefss[key]['/user_prefs/' + uid].toLowerCase().indexOf(input) >= 0){
+      document.getElementById("posted").innerHTML += "<br>" + my_prefs[key]['/user_prefs/' + uid] + "<br>";
       }
-}*/
+}
 function search(){
   document.getElementById('posted').innerHTML = '';
+  profile_search()
   var input = document.getElementById('search').value.toLowerCase();
   var ref = database.ref('/posts/');
 
@@ -61,7 +62,7 @@ function search(){
 function authStatusListener() {
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
-    document.getElementById('nav-bar').innerHTML = '<ul><li><a href="search.html">Search</a></li><li><a href="feed.html">Feed</a></li><li><h3><a href="index.html">Company Name</a></h3></li><li><a href="profile.html">Profile</a></li><li><a href="logout.html">Log Out</a></li></ul>';
+    document.getElementById('nav-bar').innerHTML = '<ul><li><a href="search.html">Search</a></li><li><a href="feed.html">Feed</a></li><li><h3><a href="index.html">Company Name</a></h3></li><li><a href="editProfileTTEESSTT.html">Profile</a></li><li><a href="logout.html">Log Out</a></li></ul>';
     getPref(user.uid);
 
   } else {

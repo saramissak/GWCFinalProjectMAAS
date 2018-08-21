@@ -84,12 +84,16 @@ function getPref(posts){
 function authStatusListener() {
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
-    document.getElementById('nav-bar').innerHTML = '<ul><li><a href="search.html">Search</a></li><li><a href="feed.html">Feed</a></li><li><h3><a href="index.html">Company Name</a></h3></li><li><a href="profile.html">Profile</a></li><li><a href="logout.html">Log Out</a></li></ul>';
+<<<<<<< HEAD
+    document.getElementById('nav-bar').innerHTML = '<ul><li><a href="search.html">Search</a></li><li><a href="feed.html">Feed</a></li><li><h3><a href="index.html">Home</a></h3></li><li><a href="profile.html">Profile</a></li><li><a href="logout.html">Log Out</a></li></ul>';
+=======
+    document.getElementById('nav-bar').innerHTML = '<ul><li><a href="search.html">Search</a></li><li><a href="feed.html">Feed</a></li><li><h3><a href="index.html">Company Name</a></h3></li><li><a href="editProfileTTEESSTT.html">Profile</a></li><li><a href="logout.html">Log Out</a></li></ul>';
+>>>>>>> e3a4c9f9a03d4aa7b6123fcd8cbe2dfeea351c64
     getPref(user.uid);
 
   } else {
     // User not signed in, get rid of the form and display a message
-    document.getElementById('nav-bar').innerHTML = '<ul><li><a href="search.html">Search</a></li><li><a href="index.html">Home </a></li><li><h3><a href="index.html">Company Name</a></h3></li><li><a href="login.html">Log In </a></li><li><a href="signup3.html">Sign Up </a></li></ul>';
+    document.getElementById('nav-bar').innerHTML = '<ul><li><a href="search.html">Search</a></li><li><a href="index.html">Home </a></li><li><h3><a href="index.html">Home</a></h3></li><li><a href="login.html">Log In </a></li><li><a href="signup3.html">Sign Up </a></li></ul>';
     document.getElementById('pref-form').innerHTML = '';
     document.getElementById('message-box').innerHTML = 'You are not logged in!';
   }
