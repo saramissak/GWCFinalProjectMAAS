@@ -13,6 +13,16 @@ firebase.initializeApp(config);
 // Get a reference to the database service
 var database = firebase.database();
 
+// if the user wants to edit the profile, they can click this button and the input boxes and buttons will reappear
+function editProfShow() {
+  document.getElementsByClassName("ghost").style.visibility = "visible";
+}
+
+function saveProfDisappear() {
+  document.getElementsByClassName("ghost").style.visibility = "hidden";
+}
+
+
 // Handles the submit button being clicked based on user id
 function changePrefs(){
 	var user = firebase.auth().currentUser;
@@ -20,7 +30,6 @@ function changePrefs(){
 	var lastName = document.getElementById('lastName-box').value;
 	var age = document.getElementById('age-box').value;
   var gender = document.getElementById('gender-box').value;
-  var address = document.getElementById('address-box').value;
   var phoneNumber = document.getElementById('phoneNumber-box').value;
   var email = document.getElementById('email-box').value;
   var objective = document.getElementById('objective-box').value;
@@ -52,6 +61,7 @@ function changePrefs(){
         alert(racesText);
       }
   }
+  document.getElementById('races').innerHTML = racesText;
 
 
 
@@ -84,8 +94,8 @@ function changePrefs(){
       if (!gender) {
         gender = my_pref.gender;
       }
-      if (!address) {
-        address = my_pref.address;
+      if (!races) {
+        races = my_pref.races;
       }
       if (!phoneNumber) {
         phoneNumber = my_pref.phoneNumber;
@@ -102,32 +112,31 @@ function changePrefs(){
       if (!accomplishments) {
         accomplishments = my_pref.accomplishments;
       }
+    /* TESTING
       alert(firstName);
       alert(lastName);
       alert(age);
       alert(gender);
       alert(races);
-      alert(address);
       alert(phoneNumber);
       alert(email);
       alert(objective);
       alert(skills);
       alert(accomplishments);
+    */
 
-
-      setPref(uid, firstName, lastName, age, gender, races, address, phoneNumber, email, objective, skills, accomplishments);
+      setPref(uid, firstName, lastName, age, gender, races, phoneNumber, email, objective, skills, accomplishments);
 	  });
 
   }
 }
 
-function setPref(uid, firstName, lastName, age, gender, races, address, phoneNumber, email, objective, skills, accomplishments){
+function setPref(uid, firstName, lastName, age, gender, races, phoneNumber, email, objective, skills, accomplishments){
 	var prefs = {
 		firstName: firstName,
 		lastName: lastName,
     age: age,
     gender: gender,
-    address: address,
     phoneNumber: phoneNumber,
     email: email,
     objective: objective,
@@ -157,7 +166,6 @@ function getPref(uid){
     var age = my_pref.age;
     var gender = my_pref.gender;
     var races = my_pref.races;
-    var address = my_pref.address;
     var phoneNumber = my_pref.phoneNumber;
     var email = my_pref.email;
     var objective = my_pref.objective;
@@ -169,8 +177,7 @@ function getPref(uid){
 		document.getElementById('lastName').innerHTML = my_pref.lastName;
     document.getElementById('age').innerHTML = my_pref.age;
     document.getElementById('gender').innerHTML = my_pref.gender;
-    document.getElementById('races').innerHTML = my_pref.races;
-    document.getElementById('address').innerHTML = my_pref.address;
+    // races already done in "getprefs"
     document.getElementById('phoneNumber').innerHTML = my_pref.phoneNumber;
     document.getElementById('email').innerHTML = my_pref.email;
     document.getElementById('objective').innerHTML = my_pref.objective;
@@ -183,12 +190,14 @@ function getPref(uid){
     document.getElementById('age-box').placeholder = age;
     document.getElementById('gender-box').placeholder = gender;
     // races checklist has no input to have a placeholder of to change
-    document.getElementById('address-box').placeholder = address;
     document.getElementById('phoneNumber-box').placeholder = phoneNumber;
     document.getElementById('email-box').placeholder = email;
     document.getElementById('objective-box').placeholder = objective;
     document.getElementById('skills-box').placeholder = skills;
     document.getElementById('accomplishments-box').placeholder = accomplishments;
+
+    //make input boxes and submit button (class = "ghost") disappear after submitting all this data
+    saveProfDisappear();
 	});
 }
 
@@ -207,4 +216,4 @@ firebase.auth().onAuthStateChanged(function(user) {
 });
 }
 
-window.onload = function(){authStatusListener();};
+window.onload = function(){authStatusListener(); saveProfDisappear();};

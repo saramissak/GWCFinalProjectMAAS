@@ -60,12 +60,6 @@
 
     <h1>Welcome! Sign-Up for a new account!</h1>
 
-    <p>First Name:</p> <br>
-    <input type="text" name="firstname">
-    <br>
-    <p>Last Name:</p> <br>
-    <input type="text" name="lastname">
-    <br>
     <p>Enter an email and password below and either sign in to an existing account or sign up</p>
 	<div id="message-box"> </div>
 	<div id="sign-up-form">
@@ -76,8 +70,11 @@
 		<input style="display:inline;width:auto;" type="password" id="password_confirmation" name="password" placeholder="Type Your Password Again"/>
 
 		<br/><br/>
-    <div class="sign">
-		<button id="sign-up"  name="signup" onclick="handleSignUp()">Sign Up</button>
+    <div id="sign">
+		<button id="sign-up"  class="width50" onclick="handleSignUp()">Sign Up</button>
+    </div>
+
+    <br>
   </div>
 	</div>
 </body>
