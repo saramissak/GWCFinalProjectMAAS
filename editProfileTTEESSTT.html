@@ -9,64 +9,95 @@
 
   <script src="editProfileTTEESSTT.js"></script>
   <link rel=StyleSheet href="editProfileTTEESSTT.css" type="text/css">
+  <style>
+    html {
+      background: url("https://images.pexels.com/photos/733852/pexels-photo-733852.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260") no-repeat center fixed;
+      background-size: cover;
+    }
+  </style>
 </head>
 
 <body>
   <div id='nav-bar'></div>
-	<div id="message-box"> hi
-</div>
-
-	<button id="editProf" name="editProf" onclick="editProfShow()">EDIT PROFILE</button>
+	<div id="message-box"> </div>
+  <h1 style="text-align: center"> M Y <br> P R O F I L E  </h1>
+	<button id="editProf" name="editProf" onclick="editProfShow()" class="buttons">EDIT PROFILE</button>
 	<div id="pref-form">
 
 		<br/><br/>
+    <div class="infoSections">
+      <p> Full Name </p>  <span id="firstName"></span> <span id="lastName"></span> <br>
+      <input style="display:inline;width:auto;" type="text" id="firstName-box" name="firstName" placeholder="First Name" class="ghost"/>
+      <input style="display:inline;width:auto;" type="text" id="lastName-box" name="lastName" placeholder="Last Name" class="ghost"/>
+      <br>
+    </div>
+    <div class="infoSections">
+      <p> Age </p>  <span id="age"></span> <br>
+      <input style="display:inline;width:auto;" type="text" id="age-box" name="age" placeholder="How old are you?" class="ghost"/>
+    </div>
+    <div class="infoSections">
+      <p> Gender </p>  <span id="gender"></span> <br>
+      <input style="display:inline;width:auto;" type="text" id="gender-box" name="gender" placeholder="What gender do you identify with?" class="ghost"/>
+      <br>
+      <span> NOTE: If you do not wish to disclose, write "not disclosed" </span>
+      <br>
+    </div>
+    <div class="infoSections">
+      <p> Racial Identity </p> <p class="ghost"> (Click all that apply)</p> <span id="races"></span> <br>
+      <div class="ghost">
+        <input type="checkbox" name="LatinoOrHispanic" id="LatinoOrHispanic" class="race"> Latino or Hispanic <br>
+        <input type="checkbox" name="Black" id="BlackOrAfricanAmerican" class="race"> Black or African American <br>
+        <input type="checkbox" name="Caucasian" id="Caucasian" class="race"> Caucasian <br>
+        <input type="checkbox" name="Asian" id="Asian" class="race"> Asian <br>
+        <input type="checkbox" name="AmericanIndianOrAlaskaNative" id="AmericanIndianOrAlaskaNative" class="race"> American Indian or Alaska Native <br>
+        <input type="checkbox" name="NHOOPC" id="NHOOPC" class="race">  Native Hawaiian or Other Pacific Islander <br>
+        <input type="checkbox" name="WestIndian" id="WestIndian" class="race"> West Indian <br>
+      <input type="checkbox" name="Other" id="Other" class="race"> Other <br>
+      <br>
+      </div>
+    </div>
 
-    <p> Full Name: </p>  <span id="firstName"></span> <span id="lastName"></span> <br>
-    <input style="display:inline;width:auto;" type="text" id="firstName-box" name="firstName" placeholder="First Name" class="ghost"/>
-    <input style="display:inline;width:auto;" type="text" id="lastName-box" name="lastName" placeholder="Last Name" class="ghost"/>
-    <br>
-    <p> Age: </p>  <span id="age"></span> <br>
-    <input style="display:inline;width:auto;" type="text" id="age-box" name="age" placeholder="How old are you?" class="ghost"/>
-    <p> Gender: </p>  <span id="gender"></span> <br>
-    <input style="display:inline;width:auto;" type="text" id="gender-box" name="gender" placeholder="What gender do you identify with?" class="ghost"/>
-    <br>
-    <span> NOTE: If you do not wish to disclose, write "not disclosed" </span>
-    <br>
 
-    <p> Racial Identity </p> <p class="ghost"> (Click all that apply)</p> <span id="races"></span> <br>
-  <div class="ghost">
-    <input type="checkbox" name="LatinoOrHispanic" id="LatinoOrHispanic" class="race"> Latino or Hispanic <br>
-    <input type="checkbox" name="Black" id="BlackOrAfricanAmerican" class="race"> Black or African American <br>
-    <input type="checkbox" name="Caucasian" id="Caucasian" class="race"> Caucasian <br>
-    <input type="checkbox" name="Asian" id="Asian" class="race"> Asian <br>
-    <input type="checkbox" name="AmericanIndianOrAlaskaNative" id="AmericanIndianOrAlaskaNative" class="race"> American Indian or Alaska Native <br>
-    <input type="checkbox" name="NHOOPC" id="NHOOPC" class="race">  Native Hawaiian or Other Pacific Islander <br>
-    <input type="checkbox" name="WestIndian" id="WestIndian" class="race"> West Indian <br>
-    <input type="checkbox" name="Other" id="Other" class="race"> Other <br>
-    <br>
+    <div class="infoSections">
+      <p> Phone Number </p>  <span id="phoneNumber"></span> <br>
+      <input style="display:inline;width:auto;" type="text" id="phoneNumber-box" name="phoneNumber" placeholder="Phone Number" class="ghost"/>
+      <br>
+    </div>
+    <div class="infoSections">
+      <p> Email </p>  <span id="email"></span> <br>
+      <input style="display:inline;width:auto;" type="text" id="email-box" name="email" placeholder="Choose the email you want employers to contact you with." class="ghost"/>
+      <br>
+    </div>
+    <div class="infoSections">
+      <p> Objective </p>  <span id="objective"></span> <br>
+      <input style="display:inline;width:auto;" type="text" id="objective-box" name="objective" placeholder="What is your resume objective?"class="ghost"/>
+      <br>
+      <!-- education would go here -->
+    </div>
+    <div class="infoSections">
+      <p> Skills </p>  <span id="skills"></span> <br>
+      <input style="display:inline;width:auto;" type="text" id="skills-box" name="skills" placeholder="Skills" class="ghost"/>
+      <br>
+    </div>
+    <div class="infoSections">
+      <p> Accomplishments </p>  <span id="accomplishments"></span> <br>
+      <input style="display:inline;width:auto;" type="text" id="accomplishments-box" name="accomplishments" placeholder="What are some accomplishments you want to state?"class="ghost"/>
+      <br>
+    </div>
+
+
+
+  <div class="infoSections">
+    <p> R E S U M E / Profile picture ?</p>
+    <div id="uploading" >
+      <progress value="0" max="100" id="progressBar">0%</progress> <br>
+      <label for="submit">Click to upload resume/pfp (?)</label> <br>
+      <input type="file" value="upload" id="submitButton" />
+    </div>
   </div>
+</div> <!-- end of form div -->
+  <button id="submit" name="submit" onclick="changePrefs()" class="ghost" class="buttons">SAVE</button>
 
-
-    <p> Phone Number: </p>  <span id="phoneNumber"></span> <br>
-    <input style="display:inline;width:auto;" type="text" id="phoneNumber-box" name="phoneNumber" placeholder="Phone Number" class="ghost"/>
-    <br>
-    <p> Email: </p>  <span id="email"></span> <br>
-    <input style="display:inline;width:auto;" type="text" id="email-box" name="email" placeholder="Choose the email you want employers to contact you with." class="ghost"/>
-    <br>
-    <p> Objective: </p>  <span id="objective"></span> <br>
-    <input style="display:inline;width:auto;" type="text" id="objective-box" name="objective" placeholder="What is your resume objective?"class="ghost"/>
-    <br>
-    <!-- education would go here -->
-    <p> Skills: </p>  <span id="skills"></span> <br>
-    <input style="display:inline;width:auto;" type="text" id="skills-box" name="skills" placeholder="Skills" class="ghost"/>
-    <br>
-    <p> Accomplishments: </p>  <span id="accomplishments"></span> <br>
-    <input style="display:inline;width:auto;" type="text" id="accomplishments-box" name="accomplishments" placeholder="What are some accomplishments you want to state?"class="ghost"/>
-    <br>
-
-
-		<button id="submit" name="submit" onclick="changePrefs()" class="ghost">Save</button>
-
-	</div>
+<script type="text/javascript" src="picture.js"></script>
 </body>
 </html>
