@@ -13,13 +13,28 @@ firebase.initializeApp(config);
 // Get a reference to the database service
 var database = firebase.database();
 
+
+
 // if the user wants to edit the profile, they can click this button and the input boxes and buttons will reappear
 function editProfShow() {
-  document.getElementsByClassName("ghost").style.visibility = "visible";
+//  document.getElementsByClassName("ghost").style.visibility = "visible";
+  var ghosts = document.getElementsByClassName("ghost");
+  var i = 0;
+  while (i < ghosts.length) {
+    ghosts[i].style.visibility = "visible";
+    i++;
+  }
 }
 
-function saveProfDisappear() {
-  document.getElementsByClassName("ghost").style.visibility = "hidden";
+function saveProfDisappear() { //DISPLAYING MODE
+//  document.getElementsByClassName("ghost").style.visibility = "hidden";
+  var ghosts = document.getElementsByClassName("ghost");
+  var i = 0;
+  while (i < ghosts.length) {
+    ghosts[i].style.visibility = "hidden";
+    i++;
+  }
+
 }
 
 
@@ -207,6 +222,7 @@ firebase.auth().onAuthStateChanged(function(user) {
     document.getElementById('nav-bar').innerHTML = '<ul><li><a href="search.html">Search</a></li><li><a href="feed.html">Feed</a></li><li><h3><a href="index.html">Company Name</a></h3></li><li><a href="editProfileTTEESSTT.html">Profile</a></li><li><a href="logout.html">Log Out</a></li></ul>';
     getPref(user.uid);
 
+
   } else {
     // User not signed in, get rid of the form and display a message
     document.getElementById('nav-bar').innerHTML = '<ul><li><a href="search.html">Search</a></li><li><a href="index.html">Home </a></li><li><h3><a href="index.html">Company Name</a></h3></li><li><a href="login.html">Log In </a></li><li><a href="signup3.html">Sign Up </a></li></ul>';
@@ -217,3 +233,31 @@ firebase.auth().onAuthStateChanged(function(user) {
 }
 
 window.onload = function(){authStatusListener(); saveProfDisappear();};
+
+
+
+// uploading resume
+var storage = firebase.storage();
+
+function init() {
+	var submitButton = document.getElementById("submitButton");
+	submitButton.addEventListener('change', (e)=>{
+	  let file = e.target.files[0];
+	  let locationRef = storage.ref('profile_picture/' /*+ user.uid + '/'*/ + file.name)
+	  let task = locationRef.put(file)
+		task.on('state_changed',
+		  function progress(snapshot){ //progress
+		    let per = (snapshot.bytesTransferred / snapshot.totalBytes) *100;
+				let uploader = document.getElementById('progressBar');
+
+				uploader.value = per;
+		  },
+		  function error(error){ },
+		  function complete(){
+		    console.log('Done')
+		  }
+		)
+	});
+}
+
+window.onload = init();
