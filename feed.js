@@ -87,7 +87,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 <<<<<<< HEAD
     document.getElementById('nav-bar').innerHTML = '<ul><li><a href="search.html">Search</a></li><li><a href="feed.html">Feed</a></li><li><h3><a href="index.html">Home</a></h3></li><li><a href="profile.html">Profile</a></li><li><a href="logout.html">Log Out</a></li></ul>';
 =======
-    document.getElementById('nav-bar').innerHTML = '<ul><li><a href="search.html">Search</a></li><li><a href="feed.html">Feed</a></li><li><h3><a href="index.html">Company Name</a></h3></li><li><a href="editProfileTTEESSTT.html">Profile</a></li><li><a href="logout.html">Log Out</a></li></ul>';
+    document.getElementById('nav-bar').innerHTML = '<ul><li><a href="search.html">Search</a></li><li><a href="feed.html">Feed</a></li><li><h3><a href="index.html">MAAS</a></h3></li><li><a href="editProfileTTEESSTT.html">Profile</a></li><li><a href="logout.html">Log Out</a></li></ul>';
 >>>>>>> e3a4c9f9a03d4aa7b6123fcd8cbe2dfeea351c64
     getPref(user.uid);
 
