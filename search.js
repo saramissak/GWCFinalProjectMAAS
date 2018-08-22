@@ -18,22 +18,42 @@ function myFunction() {
 }
 function profile_search(){
   var input = document.getElementById('search').value.toLowerCase();
-  var profiles = database.profiles('/user_prefs/'+ uid);
+  var profiles = database.ref('/user_prefs/');
 
   return profiles.once('value').then(function(snapshot){
     var my_prefs = snapshot.val();
     if(!my_prefs){
       return;
     }
-  });
-  for(var key in my_prefs){
-    if(my_prefss[key]['/user_prefs/' + uid].toLowerCase().indexOf(input) >= 0){
-      document.getElementById("posted").innerHTML += "<br>" + my_prefs[key]['/user_prefs/' + uid] + "<br>";
+    for(var key in my_prefs){
+      if(
+        my_prefs[key]['accomplishments'].toLowerCase().indexOf(input) >= 0 ||
+        my_prefs[key]['age'].toLowerCase().indexOf(input) >= 0 ||
+        my_prefs[key]['email'].toLowerCase().indexOf(input) >= 0 ||
+        my_prefs[key]['gender'].toLowerCase().indexOf(input) >= 0 ||
+        my_prefs[key]['lastName'].toLowerCase().indexOf(input) >= 0 ||
+        my_prefs[key]['objective'].toLowerCase().indexOf(input) >= 0 ||
+        my_prefs[key]['phoneNumber'].toLowerCase().indexOf(input) >= 0 ||
+        my_prefs[key]['skills'].toLowerCase().indexOf(input) >= 0 // ||
+        //my_prefs[key]['firstname'].toLowerCase().indexOf(input) >= 0 ||
+      )
+      {
+        document.getElementById("posted").innerHTML += my_prefs[key]['lastName'] + "'s email:" + my_prefs[key]['email'];
+      } else {
+        for(var r = 0; r < my_prefs[key]['races'].length; r++) {
+          if(my_prefs[key]['races'][r].toLowerCase().indexOf(input) >= 0) {
+            document.getElementById("posted").innerHTML += my_prefs[key]['lastName']+"User email with search:" + my_prefs[key]['email'];
+
+          }
+        }
       }
+
+    }
+  });
 }
 function search(){
   document.getElementById('posted').innerHTML = '';
-  profile_search()
+  profile_search();
   var input = document.getElementById('search').value.toLowerCase();
   var ref = database.ref('/posts/');
 
