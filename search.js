@@ -34,11 +34,12 @@ function profile_search(){
         my_prefs[key]['lastName'].toLowerCase().indexOf(input) >= 0 ||
         my_prefs[key]['objective'].toLowerCase().indexOf(input) >= 0 ||
         my_prefs[key]['phoneNumber'].toLowerCase().indexOf(input) >= 0 ||
-        my_prefs[key]['skills'].toLowerCase().indexOf(input) >= 0 // ||
-        //my_prefs[key]['firstname'].toLowerCase().indexOf(input) >= 0 ||
-      )
+        my_prefs[key]['skills'].toLowerCase().indexOf(input) >= 0  ||
+        my_prefs[key]['firstName'].toLowerCase().indexOf(input) >= 0)
       {
-        document.getElementById("posted").innerHTML += my_prefs[key]['lastName'] + "'s email:" + my_prefs[key]['email'];
+        document.getElementById('posted').innerHTML = '';
+        document.getElementById("posted").innerHTML += "Name: " + my_prefs[key]['firstName'] + " " + my_prefs[key]['lastName'] + "<br> Accomplishments: " + my_prefs[key]['accomplishments'] + "<br> Age: "+ my_prefs[key]['age'] + "<br> Gender: "+
+        my_prefs[key]['gender'] + "<br> Objectives: " + my_prefs[key]['objective'] + "<br> Phone Number: " +  my_prefs[key]['phoneNumber'] + "<br> Skills: " + my_prefs[key]['skills'] + "<br> Email: " + my_prefs[key]['email'] + "<br><hl>";
       } else {
         for(var r = 0; r < my_prefs[key]['races'].length; r++) {
           if(my_prefs[key]['races'][r].toLowerCase().indexOf(input) >= 0) {
